@@ -54,7 +54,8 @@
             button_width: 12,			// Width of the sliding part in pixels
 
             clear: true,				// Should we insert a div with style="clear: both;" after the switch button?
-            clear_after: null		    // Override the element after which the clearing div should be inserted (null > right after the button)
+            clear_after: null,		    // Override the element after which the clearing div should be inserted (null > right after the button)
+            anim_speed: 250             // Speed to play the animatio at
         },
 
         _create: function() {
@@ -287,7 +288,7 @@
                 }
             }
             // Animate the switch
-            this.button.animate({ left: newLeft }, 250, "easeInOutCubic");
+            this.button.animate({ left: newLeft }, this.options.anim_speed, "easeInOutCubic");
         }
 
     });
